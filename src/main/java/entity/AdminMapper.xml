@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!-- EmpMaper.xml 在com.yyrj.entity 包中  -->  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<!-- 命名空间防止重复 -->
+<mapper namespace="dao.AdminDAO">
+
+	
+	<!-- id要求唯一，
+	resultType:返回结果的类型 
+	parameterType:参数类型
+	-->
+
+	<!-- parameterType="int" 也可以 -->
+	<!-- id=#{} 里面可以随意写，因为这个值不是从entity的字段来的 -->
+	<select id="findByCode" parameterType="java.lang.String" resultType="entity.Admin">
+		select * from admin_info where admin_code=#{str}
+	</select>
+
+</mapper>
+
+
+
+
+
+
+
